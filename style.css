@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.feed-section {
+    width: 80%;
+    background-color: #f5f5dc; /* Light yellow as in your sketch */
+    padding: 20px;
+}
+
+.feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #808080; /* Grey header */
+    padding: 10px;
+    color: white;
+}
+
+.create-pip-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.new-pip {
+    display: flex;
+    align-items: center;
+    background-color: #ddd;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.pip-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.pip-feed {
+    background-color: #ffffe0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.pip {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.pip-content {
+    background-color: #ffffe0; /* Light yellow */
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.pip-content strong {
+    font-size: 16px;
+    color: black;
+}
+
+.pip-content p {
+    font-size: 14px;
+    margin: 5px 0 0;
+}
