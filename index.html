@@ -11,7 +11,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo">
-                <img src="logo.png" alt="Logo">
+                <img src="/img/logo.svg" alt="Logo">
             </div>
             <div class="menu">
                 <ul>
@@ -35,26 +35,11 @@
 
             <!-- Pip List (Feed of Pips) -->
             <div class="pip-feed">
-                <!-- Example Pip -->
-                <div class="pip">
-                    <div class="user-avatar">
-                        <img src="https://avatars.dicebear.com/api/initials/J.svg" alt="Jesus Avatar">
-                    </div>
-                    <div class="pip-content">
-                        <strong>Jesus</strong>
-                        <p>Jesus can't even make lightning. He is lame asf 😂</p>
-                    </div>
-                </div>
+                <template id="posts">
+                    <div class="image username post"></div> 
+                </template>
 
-                <div class="pip">
-                    <div class="user-avatar">
-                        <img src="https://avatars.dicebear.com/api/initials/Z.svg" alt="Zeus Avatar">
-                    </div>
-                    <div class="pip-content">
-                        <strong>Zeus</strong>
-                        <p>Jesus can't even make lightning. He is lame asf 😂</p>
-                    </div>
-                </div>
+            <div class="output"></div>
             </div>
 
             <!-- Button to open modal -->

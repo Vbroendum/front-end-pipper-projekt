@@ -47,6 +47,18 @@ body {
 
 .pip-feed {
     margin-top: 20px;
+    padding: 12px;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+template {
+    display: flex;
 }
 
 .pip {
