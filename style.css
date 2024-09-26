@@ -19,49 +19,41 @@ body {
     align-items: center;
 }
 
-.menu {
-    display: flex;
-}
-
 .menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.logo img {
-    width: 50px;
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: block;
 }
 
 .feed-section {
     width: 80%;
-    background-color: #f5f5dc; /* Light yellow as in your sketch */
+    background-color: #f5f5dc;
     padding: 20px;
 }
 
 .feed-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #808080; /* Grey header */
+    background-color: #808080;
     padding: 10px;
     color: white;
+    text-align: center;
 }
 
-.create-pip-btn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+.pip-feed {
+    margin-top: 20px;
 }
 
-.new-pip {
+.pip {
     display: flex;
-    align-items: center;
-    background-color: #ddd;
-    margin: 20px 0;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    background-color: #ffffe0;
     padding: 10px;
     border-radius: 10px;
 }
@@ -73,38 +65,72 @@ body {
     margin-right: 10px;
 }
 
-.pip-input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-}
-
-.pip-feed {
-    background-color: #ffffe0;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.pip {
-    display: flex;
-    margin-bottom: 20px;
-}
-
 .pip-content {
-    background-color: #ffffe0; /* Light yellow */
-    padding: 10px;
-    border-radius: 10px;
     width: 100%;
 }
 
 .pip-content strong {
     font-size: 16px;
-    color: black;
 }
 
 .pip-content p {
     font-size: 14px;
-    margin: 5px 0 0;
+    margin-top: 5px;
+}
+
+.create-pip-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#username, #pip-text {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#char-count {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+#submit-pip {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }

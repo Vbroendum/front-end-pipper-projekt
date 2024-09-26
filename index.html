@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Pipper Feed</title>
 </head>
 <body>
     <div class="container">
@@ -31,16 +31,6 @@
             <!-- Header -->
             <div class="feed-header">
                 <h1>Feed</h1>
-                
-            </div>
-
-            <!-- Create a New Pip Section -->
-            <div class="new-pip">
-                <div class="user-avatar">
-                    <img src="https://avatars.dicebear.com/api/initials/default.svg" alt="User Avatar">
-                </div>
-                <input type="text" placeholder="Hvad sker der?" class="pip-input">
-                <button class="create-pip-btn">Opret Tweet</button>
             </div>
 
             <!-- Pip List (Feed of Pips) -->
@@ -66,8 +56,24 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Button to open modal -->
+            <button class="create-pip-btn">Opret Tweet</button>
         </div>
     </div>
-    
+
+    <!-- Modal for Creating Pip -->
+    <div id="pip-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Opret en Pip</h2>
+            <input type="text" id="username" placeholder="Dit brugernavn" maxlength="50">
+            <textarea id="pip-text" placeholder="Hvad sker der?" maxlength="255"></textarea>
+            <div id="char-count">0/255</div>
+            <button id="submit-pip">Post Pip</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
