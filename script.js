@@ -58,37 +58,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-const post1 = {
-    profilepic: 'Avatar',
-        username: 'Oliver',
-        post: 'Kan man se hvad jeg har skrevet?'
-}
-
-const post2 = {
-    profilepic: 'Avatar',
-    username: 'Dillon',
-    post: 'Hvad i alverden er dette?',
-}
-
-const post3 = {
-    profilepic: 'Avatar',
-        username: 'Victor',
-        post: 'Jeg har ingen ide om, hvad der foregår',
-}
-
-const pipperPost = [post1, post2, post3]
-
-    pipperPost.forEach((pipperPost) => {
-
-        let temp = document.getElementById('posts');
-        let clon = temp.content.cloneNode(true);
-
-        clon.querySelector(".image").innerHTML = pipperPost.profilepic
-        clon.querySelector(".username").innerHTML = pipperPost.username
-        clon.querySelector(".post").innerHTML = pipperPost.post
-
-        document.querySelector(".output").appendChild(clon);
-    })
-
-    
