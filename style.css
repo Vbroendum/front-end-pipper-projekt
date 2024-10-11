@@ -10,6 +10,14 @@ body {
     height: 100vh;
 }
 
+.logo{
+    font-size: 1.5rem;
+}
+
+.logo:hover{
+    cursor: default;
+}
+
 .sidebar {
     width: 20%;
     background-color: white;
@@ -17,11 +25,24 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 0.5px solid black;
+}
+
+
+
+
+
+.menu {
+    border: 1px solid black; 
+    border-radius: 1.5rem;
+    padding: 12px;
+    background-color: rgb(242, 240, 239);
+    
 }
 
 .menu ul {
     list-style: none;
-    padding: 12px, 0px;
+    padding: 12px 0px;
     margin: 0;
 }
 
@@ -32,9 +53,15 @@ body {
     display: block;
 }
 
+.menu ul li a:hover {
+    background-color: #808080;
+    color: white;
+}
+
+
 .feed-section {
     width: 80%;
-    background-color: #f5f5dc;
+    background-color: #ecece8;
     padding: 20px;
 }
 
@@ -43,6 +70,7 @@ body {
     padding: 10px;
     color: white;
     text-align: center;
+    border-radius: 2rem;
 }
 
 .pip-feed {
@@ -98,6 +126,10 @@ template {
     cursor: pointer;
     border-radius: 5px;
     margin-top: 20px;
+}
+
+.create-pip-btn:hover {
+    background-color: #3e8e41;
 }
 
 .modal {
