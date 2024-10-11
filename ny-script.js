@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.querySelector('.close');
     const pipText = document.getElementById('pip-text');
     const pipFeed = document.getElementById('pip-feed');
+    const submitPipBtn = document.getElementById('submit-pip');
     const charCount = document.getElementById('char-count');
+    const usernameInput = document.getElementById('username');
 
 
     // Open Modal
@@ -30,36 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Post Pip
-    const submitPipBtn = document.getElementById('submit-pip');
-    submitPipBtn.addEventListener('click', () => {
-        const username = document.getElementById('username').value;
-        const text = pipText.value;
-
-        if (username && text) {
-            // Create a new Pip
-            const newPip = document.createElement('div');
-            newPip.classList.add('pip');
-            newPip.innerHTML = `
-                <div class="user-avatar">
-                    <img src="https://avatars.dicebear.com/api/initials/${username[0].toUpperCase()}.svg" alt="User Avatar">
-                </div>
-                <div class="pip-content">
-                    <strong>${username}</strong>
-                    <p>${text}</p>
-                </div>
-            `;
-
-            document.querySelector('.pip-feed').prepend(newPip);
-
-            // Clear input and close modal
-            document.getElementById('username').value = '';
-            pipText.value = '';
-            charCount.textContent = '0/255';
-            modal.style.display = 'none';
-        }
-    });
-});
 
 const fetchPips = async () => {
     const response = await fetch('http://localhost:8000/pips');
@@ -67,7 +39,7 @@ const fetchPips = async () => {
 
     pipFeed.innerHTML = ''; // Clear the feed
     pips.forEach(pip => {
-        const listItem = document.createElement('li');
+        const listItem = document.createElement('div.post');
         
         // Create avatar URL based on the username
         const avatarUrl = `https://avatars.dicebear.com/api/initials/${encodeURIComponent(pip.username)}.svg`;
@@ -87,4 +59,35 @@ const fetchPips = async () => {
 };
 
 // Call fetchPips on load
-fetchPips();
+fetchPips(); 
+
+submitPipBtn.addEventListener('click', async () => {
+    const username = usernameInput.value;
+    const post = pipText.value;
+
+    if (username && post) {
+        const newPip = {
+            username,
+            post
+        };
+
+        // Send POST request to backend
+        await fetch('http://localhost:8000/pips', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newPip)
+        });
+
+        // Clear inputs and refresh feed
+        usernameInput.value = '';
+        pipText.value = '';
+        charCount.textContent = '0/255';
+
+        fetchPips(); // Refresh feed with new pip
+    }
+});
+
+})
+

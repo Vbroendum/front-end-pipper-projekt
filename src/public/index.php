@@ -33,7 +33,7 @@ try {
     
         //set the PDO error mode to exception
     
-    $statement = $conn->query("SELECT * FROM pips");
+    $statement = $conn->query("SELECT * FROM pips ORDER BY id DESC");
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 echo json_encode($result);
@@ -43,9 +43,7 @@ echo json_encode($result);
     echo "Connection failed: " . $e->getMessage();
 }}
 
-else if ($REQUESTMethod == "POST") {
-    echo "You sent a post";
-}
+
 
 
 if ($REQUESTMethod == "POST" && $uri[1] == "pips") {
